@@ -17,7 +17,7 @@ local function checkInputRotation(cam, zoomValue)
         SetEntityHeading(cache.ped, newZ)
     end
 end
-print("Test")
+print("Testicle")
 local function handleZoom(cam)
     local scrollUpControl = IsPedSittingInAnyVehicle(cache.ped) and 17 or 241
     local scrollDownControl = IsPedSittingInAnyVehicle(cache.ped) and 16 or 242
