@@ -68,13 +68,16 @@ end
 ---@param ped number
 ---@return boolean
 local function canOpenTarget(ped)
-	return IsPedFatallyInjured(ped)
-	or IsEntityPlayingAnim(ped, 'dead', 'dead_a', 3)
-	or IsPedCuffed(ped)
-	or IsEntityPlayingAnim(ped, 'mp_arresting', 'idle', 3)
-	or IsEntityPlayingAnim(ped, 'missminuteman_1ig_2', 'handsup_base', 3)
-	or IsEntityPlayingAnim(ped, 'missminuteman_1ig_2', 'handsup_enter', 3)
-	or IsEntityPlayingAnim(ped, 'random@mugging3', 'handsup_standing_base', 3)
+    local player = NetworkGetPlayerIndexFromPed(ped)
+    local playerID = GetPlayerServerId(player)
+    return IsPedFatallyInjured(ped)
+    or Player(playerID).state.dead
+    or IsEntityPlayingAnim(ped, 'dead', 'dead_a', 3)
+    or IsPedCuffed(ped)
+    or IsEntityPlayingAnim(ped, 'mp_arresting', 'idle', 3)
+    or IsEntityPlayingAnim(ped, 'missminuteman_1ig_2', 'handsup_base', 3)
+    or IsEntityPlayingAnim(ped, 'missminuteman_1ig_2', 'handsup_enter', 3)
+    or IsEntityPlayingAnim(ped, 'random@mugging3', 'handsup_standing_base', 3)
 end
 
 local defaultInventory = {
