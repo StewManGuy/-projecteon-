@@ -1682,4 +1682,37 @@ return {
 	server = {export = 'r14-evidence.microfibercloth'},
 	allowArmed = true,
 },
+
+	["emptydocuments"] = {
+		label = "Blank Documents",
+		weight = 10,
+		stack = false,
+		close = true,
+		description = "These are blank documents which you can use to fill them out.",
+		client = {
+			image = "emptydocuments.png",
+		}
+	},
+
+	["portablecopier"] = {
+		label = "Portable Document Copier",
+		weight = 10,
+		stack = false,
+		close = false,
+		description = "If you have this machine you will be able to duplicate documents.",
+		client = {
+			image = "portablecopier.png",
+		}
+	},
+
+	["document"] = {
+		label = "Document",
+		weight = 10,
+		stack = false,
+		close = true,
+		description = "This is a custom document which has been made.",
+		client = {
+			image = "printerdocument.png",
+		}
+	},
 }

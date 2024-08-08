@@ -1,0 +1,617 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+	font-family: 'Calculator';
+	src: url('Calculator.ttf');
+}
+
+:root {
+	user-select: none;
+}
+
+html {
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+#helicontainer {
+	font-family: 'Roboto Mono';
+	display: none;
+	position: relative;
+	height: 100vh;
+	width: 100vw;
+	background-color: transparent !important;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+
+.vehicleinfo {
+	display: none;
+}
+
+.heli-model {
+	position: absolute;
+	left: 50%;
+	top: 35%;
+	transform: translate(-50%, -50%);
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
+.heli-plate {
+	position: absolute;
+	left: 50%;
+	bottom: 30%;
+	transform: translate(-50%, -50%);
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
+.heli-street {
+	position: absolute;
+	left: 70%;
+	top: 50.7%;
+	transform: translate(-50%, -50%);
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
+.heli-speed {
+	position: absolute;
+	left: 35%;
+	top: 35%;
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+	font-size: 22px;
+}
+
+.heli-rectangle {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 70px;
+	height: 70px;
+	background: transparent;
+	border: 1px solid #ab0c0c;
+	transform: translate(-50%, -50%);
+}
+
+.scan {
+	position: absolute;
+	left: 37%;
+	bottom: 39%;
+	border: 2px solid #cccccc;
+	background: rgba(155, 155, 155, 0.0);
+	height: 20vh;
+	width: 1vw;
+}
+
+.scanBar {
+	background: #cccccc;
+}
+
+#camcontainer {
+	font-family: 'Roboto Mono';
+	position: relative;
+	height: 100vh;
+	background-color: transparent !important;
+}
+
+#camlabel {
+	position: absolute;
+	left: 50%;
+	bottom: 10%;
+	transform: translate(-50%, -50%);
+	font-size: 20px;
+	color: white;
+	background: rgba(0, 0, 0, 0.9);
+	padding: 0.3vw;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#camtimelabel {
+	position: absolute;
+	right: 10%;
+	top: 10%;
+	font-size: 20px;
+	color: white;
+	background: rgba(0, 0, 0, 0.9);
+	padding: 0.3vw;
+}
+
+#camdatelabel {
+	position: absolute;
+	left: 10%;
+	top: 10%;
+	font-size: 20px;
+	color: white;
+	background: rgba(0, 0, 0, 0.9);
+	padding: 0.3vw;
+}
+
+#iplabel {
+	position: absolute;
+	right: 10%;
+	bottom: 15%;
+	transform: translate(0, -50%);
+	font-size: 20px;
+	color: white;
+	background: rgba(0, 0, 0, 0.9);
+	padding: 0.3vw;
+}
+
+#connectedlabel {
+	position: absolute;
+	right: 10%;
+	bottom: 10%;
+	transform: translate(0, -50%);
+	font-size: 20px;
+	color: white;
+	background: rgba(0, 0, 0, 0.9);
+	padding: 0.3vw;
+}
+
+.connected {
+	color: #3cc71a !important;
+}
+
+.disconnect {
+	color: #ba1e1e !important;
+}
+
+#blockscreen {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(25, 25, 25, 1.0);
+	display: none;
+	z-index: -99;
+}
+
+.fingerprint-container {
+	display: none;
+	position: relative;
+	width: 60vh;
+	margin: 0 auto;
+	top: 10vh;
+}
+
+.fingerprint-frame {
+	width: 60vh;
+}
+
+.take-fingerprint {
+	position: absolute;
+	height: 9.8vh;
+	width: 8.2vh;
+	background: rgba(250, 250, 250, 0.45);
+	opacity: 0.5;
+	margin: 0 0 15.1vh 41.1vh;
+	border-radius: 0.7vh;
+	left: 0;
+	right: 0;
+	bottom: 15vh;
+	transition: 0.1s;
+}
+
+.take-fingerprint:hover {
+	background: rgba(250, 250, 250, 0.65);
+}
+
+.fingerprint-id {
+	position: absolute;
+	width: 24vh;
+	height: 42.2vh;
+	top: 14vh;
+	margin: 0 auto;
+	left: -115px;
+	right: 0;
+	text-align: center;
+	/* padding-top: 2vh; */
+	font-family: 'Roboto Mono';
+	font-weight: bold;
+}
+
+.fingerprint-screen {
+	width: 100%;
+	height: 100%;
+	background-color: #0e0e30;
+}
+
+.fingerprint-screen>img {
+	height: 14vh;
+	margin-top: 4vh;
+	border: 1px solid gray;
+	border-radius: 0.33vh;
+}
+
+.fingerprint-screen>p {
+	color: white;
+	font-size: 1.25vh;
+	font-weight: lighter;
+	text-align: start;
+	padding-left: 2.5vh;
+}
+
+.alcoholtester-container {
+	display: none;
+	position: relative;
+	width: 27vw;
+	height: 32vw;
+	margin: 0vw auto;
+	/* right: 10vw; */
+	top: 12vw;
+}
+
+.alcoholtester-frame {
+	width: 20vw;
+}
+.take-alcoholtester {
+	position: absolute;
+	height: 4.2vh;
+	width: 4.2vh;
+	background: rgba(250, 250, 250, 0.45);
+	opacity: 0.5;
+	margin: 0 0 15.1vh 41.1vh;
+	border-radius: 3.7vh;
+	right: 16.8vh;
+	bottom: 13.3vh;
+	transition: 0.1s;
+	cursor: pointer;
+}
+
+.take-alcoholtester:hover {
+	background: rgba(250, 250, 250, 0.65);
+}
+
+.alcoholtester-id {
+	position: absolute;
+	width: 14vh;
+	height: 12.7vh;
+	top: 10.3vh;
+	margin: 0 auto;
+	left: -15px;
+	right: 0;
+	text-align: center;
+	padding: 3vh 0;
+	font-family: 'Calculator';
+	font-weight: bold;
+	font-size: 1.6vw;
+}
+
+.blaaspijp {
+	position: absolute;
+	height: 4.5vh;
+	width: 12.1vh;
+	background: rgba(250, 250, 250, 0.45);
+	opacity: 0.5;
+	margin: 0 0 15.1vh 41.1vh;
+	border-radius: 3.7vh;
+	left: auto;
+	right: 35.8vh;
+	bottom: 35.7vh;
+	transition: 0.1s;
+	cursor: pointer;
+}
+
+.blaaspijp:hover {
+	background: rgba(250, 250, 250, 0.65);
+}
+
+.alcoholtester-id p {
+	margin-bottom: 0;
+}
+
+.alcoholtester-screen {
+	width: 100%;
+	height: 100%;
+	background-color: #0e0e30;
+}
+
+.alcoholtester-screen>img {
+	height: 14vh;
+	margin-top: 4vh;
+	border: 0.1vw solid gray;
+	border-radius: 0.33vh;
+}
+
+.alcoholtester-screen>p {
+	color: white;
+	font-size: 1.25vh;
+	font-weight: lighter;
+	text-align: start;
+	padding-left: 2.5vh;
+}
+
+/* Portable Fingerprint Scanner */
+
+.scaner {
+    position: absolute;
+    left: 33vw;
+    top: 10vw;
+	display: none;
+}
+
+.tablet {
+    position: relative;
+    width: 34vw;
+}
+
+.logo {
+    left: 5vw;
+    position: absolute;
+    top: 5.5vw;
+    width: 2vw;
+}
+
+.scanner-text {
+    left: 10vw;
+    position: absolute;
+    color: #303030;
+    top: 5.5vw;
+    width: 6vw;
+    height: 1vw;
+    text-align: center;
+    font-size: 0.85vw;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0vw 0vw 1vw black;
+}
+
+.scanner-text-2 {
+    left: 9.35vw;
+    position: absolute;
+    top: 13.7vw;
+    width: 7.5vw;
+    line-height: 2vw;
+    color: #BDBDBD;
+    height: 1.9vw;
+    text-align: center;
+    font-size: 0.7vw;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0vw 0vw 1vw black;
+}
+
+.close-button {
+    position: absolute;
+    top: 9.3vw;
+    left: 4.6vw;
+    width: 2.2vw;
+    height: 2.2vw;
+    background-color: #27272a;
+    text-align: center;
+	padding-top: 0.5vw;
+    border-radius: 5vw;
+    font-size: 0.8vw;
+    cursor: pointer;
+	color: #E31718;
+	border: 0.15vw solid #E31718;
+}
+
+.fp-scan {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 10.55vw;
+    top: 7.2vw;
+    cursor: pointer;
+}
+
+.fp-scan .fingerprint {
+	display: none;
+    position: relative;
+    width: 5vw;
+    height: 5vw;
+    background: url("./images/fingerprint.png");
+    background-size: 5vw;
+}
+
+.fp-scan .fingerprint::before {
+	display: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("./images/fingerscan.png");
+    background-size: 5vw;
+    animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+
+    0%,
+    100% {
+        height: 0%;
+    }
+
+    50% {
+        height: 100%;
+    }
+}
+
+.fp-scan .fingerprint::after {
+	display: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1vw;
+    background: #FE6631;
+    border-radius: 1vw;
+    filter: drop-shadow(0 0 20px #FE6631) drop-shadow(0 0 60px #FE6631);
+    animation: animate_line 4s ease-in-out infinite;
+}
+
+@keyframes animate_line {
+
+    0%,
+    100% {
+        top: 0%;
+    }
+
+    50% {
+        top: 100%;
+    }
+}
+
+.second-screen {
+    display: none;
+}
+
+.finish-screen {
+    display: none;
+}
+
+.scanner-title {
+    color: white;
+    font-size: 0.8vw;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: bold;
+    text-shadow: 0vw 0vw 1vw black;
+    width: 9.5vw;
+    height: 1.5vw;
+    position: absolute;
+    line-height: 1.5vw;
+    left: 10.5vw;
+    top: 19.5vw;
+}
+
+.user-photo {
+    position: absolute;
+    right: 6.4vw;
+    top: 20vw;
+    height: 5.35vw;
+    width: 5.35vw;
+    border: 0.15vw solid #FE6631;
+    border-radius: 0.15vw;
+}
+
+.los-santos-logo {
+    position: absolute;
+    left: 11.4vw;
+    top: 20vw;
+    height: 8.35vw;
+    width: 8.35vw;
+    opacity: 0.01;
+}
+
+.user-info {
+    width: 11.2vw;
+    height: 7vw;
+    position: absolute;
+    left: 10.5vw;
+    top: 20.8vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.info {
+    position: relative;
+    color: white;
+    font-size: 0.75vw;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 400;
+    text-shadow: 0vw 0vw 1vw black;
+    opacity: 0.7;
+}
+
+.info-comment {
+    font-weight: bold;
+}
+
+.button-list {
+    width: 18vw;
+    height: 1.5vw;
+    position: absolute;
+    top: 28vw;
+    left: 10vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.button {
+    color: white;
+    text-align: center;
+    font-size: 0.8vw;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0vw 0vw 1vw black;
+    background: #FE6631;
+    width: 5.5vw;
+    height: 1.5vw;
+    position: relative;
+    line-height: 1.5vw;
+    margin-left: 0.4vw;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 0.1vw;
+}
+
+.button:hover {
+    opacity: 0.8;
+    font-size: 0.85vw;
+}
+
+.first-screen{
+    background: rgba(159, 159, 159, 0.5);
+    border-radius: 10px;
+    /* padding: 0.3vw; */
+    display: none;
+    position: absolute;
+    width: 13vw;
+    height: 1vw;
+    left: 12vw;
+    top: 25.5vw;
+}
+
+#loading{
+    transition: all 500ms ease;
+    height: 1vw;
+    width: 100%;
+    border-radius: 8px;
+    background: #FE6631;
+    position: absolute;
+    display: inline-block;
+    animation: load 5s ease;
+  }
+  #load{
+    font-weight: bold;
+    text-align: center;
+    margin-top: -3vw;
+    font-family: "Rajdhani", sans-serif;
+    color: #BDBDBD;
+  }
+  
+  @keyframes load{
+    0%{
+      width: 2%;
+    }
+    10%{
+      width: 10%;
+    }
+  }
