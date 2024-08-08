@@ -1542,4 +1542,144 @@ return {
 	stack = true,
 	close = false,
 },
+['filled_evidence_bag'] = {
+	consume = 0.0,
+	label = 'Collected Evidence',
+	weight = 0,
+	stack = false,
+	description = 'This is police evidence.',
+	server = {export = 'r14-evidence.filled_evidence_bag'},
+},
+
+
+['empty_evidence_bag'] = {
+	consume = 0.0,
+	label = 'Empty Evidence Bag',
+	weight = 0,
+	stack = true,
+	description = 'This is an evidence bag.',
+},
+
+['nikon'] = {
+	consume = 0.0,
+	label = 'Nikoff G600',
+	weight = 500,
+	stack = false,
+	description = 'Caught in 4k',
+	server = {export = 'r14-evidence.nikon'},
+},
+
+['sdcard'] = {
+	consume = 0.0,
+	label = 'SD Card',
+	weight = 100,
+	stack = false,
+	description = 'People still use these??',
+	server = {export = 'r14-evidence.sdcard'},
+},
+
+['gsrtestkit'] = {
+	consume = 0.0,
+	label = 'GSR Field Test Kit',
+	weight = 100,
+	stack = true,
+	close = true,
+	description = "A field GSR test kit containing several test strips",
+	server = {export = 'r14-evidence.gsrtestkit'},
+},
+
+['dnatestkit'] = {
+	consume = 0.0,
+	label = 'DNA Field Swab Kit',
+	weight = 100,
+	stack = true,
+	close = true,
+	description = "A field DNA swab kit containing several vials and swabs",
+	server = {export = 'r14-evidence.dnatestkit'},
+},
+
+
+['drugtestkit'] = {
+	consume = 0.0,
+	label = 'DNA Field Swab Kit',
+	weight = 100,
+	stack = true,
+	description = 'A multipanel oral drug test kit like the one your lame dad or boss buys... but for cops.',
+	server = {export = 'r14-evidence.drugtestkit'},
+},
+
+['breathalyzer'] = {
+	consume = 0.0,
+	label = 'Breathalyzer',
+	weight = 200,
+	stack = true,
+	close = true,
+	description = "A vintage 2000's WiWang breathalyzer engraved Property of LSPD",
+	server = {export = 'r14-evidence.breathalyzer'},
+},
+
+['fingerprintreader'] = {
+	consume = 0.0,
+	label = 'Pro Tech XFR8001',
+	weight = 200,
+	stack = false,
+	close = true,
+	description = "A Pro Tech mobile fingerprint reader that looks like it's seen better days, currently stuck in french.",
+	server = {export = 'r14-evidence.fingerprintreader'},
+},
+
+['accesstool'] = {
+	consume = 0.0,
+	label = 'Access Tool',
+	weight = 200,
+	stack = false,
+	description = 'Snap into an access tool.',
+	server = {export = 'r14-evidence.accesstool'},
+},
+
+['fingerprintkit'] = {
+	consume = 0.0,
+	label = 'Fingerprint Kit',
+	weight = 1000,
+	stack = true,
+	close = true,
+	description = "A small kit that includes fingerprint dust, chemicals, and a brush for developing fingerprints",
+},
+
+['mikrosil'] = {
+	consume = 0.0,
+	label = 'Mikrosil',
+	weight = 200,
+	stack = true,
+	close = true,
+	description = "Two tubes of silicon casting material used to lift fingerprints from irregular surfaces",
+},
+
+['fingerprinttape'] = {
+	consume = 0.0,
+	label = 'Fingerprint Tape',
+	weight = 200,
+	stack = true,
+	close = true,
+	description = "Extra clear tape used to lift fingerprints from smooth, nonporous surfaces",
+},
+
+['blox'] = {
+	consume = 0.0,
+	label = 'Blox Multisurface',
+	weight = 200,
+	stack = true,
+	close = true,
+	description = 'Kills everything!',
+},
+
+['microfibercloth'] = {
+	consume = 0.0,
+	label = 'Microfiber Cloth',
+	weight = 200,
+	stack = true,
+	description = 'Polyester, but fluffy',
+	server = {export = 'r14-evidence.microfibercloth'},
+	allowArmed = true,
+},
 }
