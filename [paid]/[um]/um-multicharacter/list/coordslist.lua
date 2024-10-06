@@ -25,19 +25,19 @@ Coords.List = {
 
     --]]
 
-   [1] = { pedCoords = vector4(2934.43, 5325.41, 100.62, 128.05) },
-   [2] = { pedCoords = vector4(3321.66, 5171.31, 18.42, 98.12) },
-   [3] = { pedCoords = vector4(2528.89, 4208.06, 40.03, 323.25), camCoords = vector4(2529.9, 4210.20, 40.04, 143.39) },
-   [4] = { pedCoords = vector4(1965.92, 4636.62, 40.82, 36.75) },
-   [5] = { pedCoords = vector4(-1588.18, -1126.39, 2.57, 268.58), camCoords = vector4(-1586.52, -1125.79, 2.58, 95.23) },
-   [6] = { pedCoords = vector4(-1683.34, -1129.57, 13.13, 102.49) },
-   [7] = { pedCoords = vector4(-1631.62, 194.38, 60.63, 111.56) },
-   [8] = { pedCoords = vector4(-1739.52, -1114.48, 13.07, 91.75) },
-   [9] = { pedCoords = vector4(-1387.03, 6741.98, 11.98, 67.8) },
-   [10] = { pedCoords = vector4(-830.52, -102.67, 28.19, 297.36), camCoords = vector4(-828.80, -101.17, 28.17, 297.36) },
-   [11] = { pedCoords = vector4(26.96, 200.78, 105.97, 334.61), camCoords = vector4(27.60, 202.78, 105.97, 334.61) },
-   [12] = { pedCoords = vector4(657.27, -1497.52, 10.68, 191.41), camCoords = vector4(657.99, -1499.80, 10.68, 193.48) },
-   [13] = { pedCoords = vector4(-74.14, -1455.51, 32.16, 115.75)},
+    [1] = { pedCoords = vector4(2934.43, 5325.41, 100.62, 128.05) },
+    [2] = { pedCoords = vector4(3321.66, 5171.31, 18.42, 98.12) },
+    [3] = { pedCoords = vector4(2528.89, 4208.06, 40.03, 323.25), camCoords = vector4(2529.9, 4210.20, 40.04, 143.39) },
+    [4] = { pedCoords = vector4(1965.92, 4636.62, 40.82, 36.75) },
+    [5] = { pedCoords = vector4(-1588.18, -1126.39, 2.57, 268.58), camCoords = vector4(-1586.52, -1125.79, 2.58, 95.23) },
+    [6] = { pedCoords = vector4(-1683.34, -1129.57, 13.13, 102.49) },
+    [7] = { pedCoords = vector4(-1631.62, 194.38, 60.63, 111.56) },
+    [8] = { pedCoords = vector4(-1739.52, -1114.48, 13.07, 91.75) },
+    [9] = { pedCoords = vector4(-1387.03, 6741.98, 11.98, 67.8) },
+    [10] = { pedCoords = vector4(-830.52, -102.67, 28.19, 297.36), camCoords = vector4(-828.80, -101.17, 28.17, 297.36) },
+    [11] = { pedCoords = vector4(26.96, 200.78, 105.97, 334.61), camCoords = vector4(27.60, 202.78, 105.97, 334.61) },
+    [12] = { pedCoords = vector4(657.27, -1497.52, 10.68, 191.41), camCoords = vector4(657.99, -1499.80, 10.68, 193.48) },
+    [13] = { pedCoords = vector4(-74.14, -1455.51, 32.16, 115.75) },
 
     --- Scenario List
     -- [this only works for single coordinates, if your coordinate state is random this list will not work]
@@ -61,5 +61,11 @@ Coords.List = {
         pedCoords = vector4(-519.76, 4420.22, 81.41, 271.8),
         camCoords = vector4(-516.76, 4420.92, 81.41, 271.8),
         scenario = 'PROP_HUMAN_SEAT_CHAIR_DRINK'
+    },
+
+    -- NO IPL List (need bob74_ipl)
+    [18] = {
+        pedCoords = vec4(148.16, -2201.9, 4.69, 86.71),
+        camCoords = vec4(146.0, -2201.95, 4.65, 266.27),
     }
 }

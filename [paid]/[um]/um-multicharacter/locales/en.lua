@@ -1,6 +1,4 @@
-Lang = {}
-
-Lang["en"] = {
+return {
     CharacterInformation = {
         title = "Create New Character",
         subtitle = "Character Information",

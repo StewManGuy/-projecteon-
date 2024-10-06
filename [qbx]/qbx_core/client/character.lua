@@ -305,10 +305,15 @@ local function spawnLastLocation()
         heading = QBX.PlayerData.position.w
     }) end)
 
+    local insideMeta = QBX.PlayerData.metadata.inside
+    if insideMeta.propertyId then
+        TriggerServerEvent('ps-housing:server:enterProperty', tostring(insideMeta.propertyId))
+    end
+
     TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
     TriggerEvent('QBCore:Client:OnPlayerLoaded')
-    TriggerServerEvent('qb-houses:server:SetInsideMeta', 0, false)
-    TriggerServerEvent('qb-apartments:server:SetInsideMeta', 0, 0, false)
+    -- TriggerServerEvent('qb-houses:server:SetInsideMeta', 0, false)
+    -- TriggerServerEvent('qb-apartments:server:SetInsideMeta', 0, 0, false)
 
     while not IsScreenFadedIn() do
         Wait(0)
@@ -335,21 +340,20 @@ local function createCharacter(cid)
     end
 
     DoScreenFadeOut(150)
-    local newData = lib.callback.await('qbx_core:server:createCharacter', false, {
+    lib.callback.await('qbx_core:server:createCharacter', false, {
         firstname = capString(dialog[1]),
         lastname = capString(dialog[2]),
         nationality = capString(dialog[3]),
         gender = dialog[4] == locale('info.char_male') and 0 or 1,
         birthdate = dialog[5],
-        cid = cid
+        citizenid = cid
     })
 
     if GetResourceState('qbx_spawn') == 'missing' then
         spawnDefault()
-        TriggerEvent('qb-clothes:client:CreateFirstCharacter')
     else
         if config.characters.startingApartment then
-            TriggerEvent('apartments:client:setupSpawnUI', newData)
+            TriggerEvent('apartments:client:setupSpawnUI')
         else
             TriggerEvent('qbx_core:client:spawnNoApartments')
         end

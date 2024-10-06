@@ -1,4 +1,4 @@
-Lang["tr"] = {
+return {
     CharacterInformation = {
         title = "Yeni Karakter Oluştur",
         subtitle = "Karakter Bilgileri",
